@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="userinfo">
+        <button class="btn-login" wx:if="{{!userInfo.avatarUrl}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            点击登录
+        </button>
+        <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <view class="kind-list__item">
+                <view class="kind-list__item-bd kind-list__item-bd_show">
+                    <view class="weui-cells weui-cells_show">
+                        <navigator url="../../pages/index/index" class="weui-cell weui-cell_access">
+                            <view class="weui-cell__bd">学习记录(未开放)</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+</view>

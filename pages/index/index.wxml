@@ -1,0 +1,81 @@
+<view class="page" data-weui-theme="{{theme}}">
+
+    <view class="head">
+        <!--是否显示圆点，自动播放， 间隔时间， 监听滚动和点击事件-->
+        <swiper class="swiper-header" indicator-dots="true" autoplay="true" duration="1000">
+            <block wx:for="{{imgs}}" wx:key="key">
+                <swiper-item>
+                    <image class="" src="{{item}}"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+
+
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">精彩视频课程</view>
+
+            <view class="weui-panel__bd">
+                <block wx:for="{{courseList}}" wx:key="key">
+                    <a class="weui-media-box weui-media-box_appmsg" bindtap="toDetail" data-id="({{item.id}})">
+                        <view class="weui-media-box__hd">
+                            <image class="weui-media-box__thumb" src="{{item.thumbnail}}" alt></image>
+                        </view>
+                        <view class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">{{item.title}}</h4>
+                            <view class="weui-media-box__desc video-counter">{{item.vistorCounter}}人观看</view>
+                        </view>
+                    </a>
+                </block>
+            </view>
+
+<!--            <view class="weui-panel__ft">-->
+<!--                <a class="weui-cell weui-cell_active weui-cell_access weui-cell_link">-->
+<!--                    <view class="weui-cell__bd">查看更多</view>-->
+<!--                    <text class="weui-cell__ft"></text>-->
+<!--                </a>-->
+<!--            </view>-->
+        </view>
+
+
+    </view>
+
+    <view class="page__bd page__bd_spacing">
+        <a class="weui-btn weui-btn_default" bindtap="open2">样式二</a>
+    </view>
+
+    <view class="fadeIn" wx:if="{{dialog2}}">
+        <view class="weui-mask" bindtap="close"></view>
+        <view class="weui-half-screen-dialog">
+            <view class="weui-half-screen-dialog__hd">
+                <view class="weui-half-screen-dialog__hd__side" bindtap="close">
+                    <a class="weui-icon-btn">返回<i class="weui-icon-back-arrow-thin"></i></a>
+                </view>
+                <view class="weui-half-screen-dialog__hd__main">
+                    <strong class="weui-half-screen-dialog__title">输入购买的密码</strong>
+                </view>
+            </view>
+
+            <form bindsubmit="checkPwd" bindreset="formReset">
+                <view class="weui-half-screen-dialog__bd">
+                    <view class="weui-half-screen-dialog__desc">
+                        密码校验成功后可观看精彩的视频内容
+                    </view>
+                    <view class="weui-half-screen-dialog__tips">
+                        <view class="weui-cell weui-cell_active">
+                            <view class="weui-cell__bd">
+                                <input class="weui-input" name='pwd' placeholder="请输入购买的密码"
+                                       placeholder-class="weui-input__placeholder"/>
+                            </view>
+                        </view>
+
+                    </view>
+                </view>
+                <view class="weui-half-screen-dialog__ft">
+                    <button class="weui-btn weui-btn_default" formType="submit">校验密码</button>
+                </view>
+            </form>
+        </view>
+    </view>
+</view>
