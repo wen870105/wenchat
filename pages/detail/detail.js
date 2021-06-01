@@ -23,40 +23,6 @@ Page({
         this.setData({
             courseId: options.courseId
         })
-        console.log("courseId=", this.data.courseId)
-    },
-    bindInputBlur(e) {
-        this.inputValue = e.detail.value
-    },
-
-    bindButtonTap() {
-        const that = this
-        wx.chooseVideo({
-            sourceType: ['album', 'camera'],
-            maxDuration: 60,
-            camera: ['front', 'back'],
-            success(res) {
-                that.setData({
-                    src: res.tempFilePath
-                })
-            }
-        })
-    },
-
-    bindPlayVideo() {
-        console.log('1')
-        this.videoContext.play()
-    },
-    bindSendDanmu() {
-        this.videoContext.sendDanmu({
-            text: this.inputValue,
-            color: getRandomColor()
-        })
-    },
-
-    videoErrorCallback(e) {
-        console.log('视频错误信息:')
-        console.log(e.detail.errMsg)
     },
     downloadPpt(e) {
         console.log('download ', e.currentTarget.dataset.id)
