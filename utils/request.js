@@ -1,6 +1,6 @@
 import config from './config'
 
-export default (url, data = {}, method = 'GET') => {
+export default (url, data = {}, method = 'POST') => {
     return new Promise((resolve, reject) => {
         wx.request({
             url: config.host + url,

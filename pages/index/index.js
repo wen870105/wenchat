@@ -5,51 +5,38 @@ Page({
 
     data: {
         dialog2: false,
-        courseList: {},
+        counter1: 0,
+        counter2: 0,
+        counter3: 0,
         imgs: {}
     },
 
     onLoad: async function () {
         // 加载header广告
         let ret = await request('/wechat/headerImg')
-        let listRet = await request('/wechat/list',{"pageIndex":1},'post')
-
         this.setData({
-            imgs: ret.obj.imgs,
-            courseList: listRet.obj.result
+            imgs: ret.obj.imgs
         });
-        
+        let listRet = await request('/wechat/categoryStats', 'post')
+        console.log("listRet:=", listRet);
+        let list = listRet.obj;
+        this.setData({
+            counter1: list[0].sumCnt,
+            counter2: list[1].sumCnt,
+            counter3: list[2].sumCnt,
+        });
     },
     listenSwiper: function (e) {
         console.log(e)
     },
-    close: function () {
-        this.setData({
-            dialog2: false
-        });
+
+    toList(e) {
+        console.log(e.currentTarget.dataset.id + ' =,toList ：', e)
+        // wx.switchTab({url: '/pages/list/list?categoryId=' + e.currentTarget.dataset.id})
+        wx.reLaunch({url: '/pages/list/list?categoryId=' + e.currentTarget.dataset.id})
     },
-    open2() {
-        this.setData({
-            dialog2: true
-        });
-    },
-    toDetail(e){
-        console.log('toDetail ：' , e)
-        wx.reLaunch({url: '/pages/detail/detail?courseId='+e.currentTarget.dataset.id})
-    },
-    checkPwd(e) {
-        console.log('form发生了submit事件，携带数据为：', e.detail.value)
-        console.log('form发生了submit事件，携带数据为：', e.detail.value.pwd)
-        // wx.request({
-        //   url: 'http://127.0.0.1:8080/wechat/code',
-        //   method: 'post',
-        //   data: {
-        //     code: res.code
-        //   },
-        //   success (res) {
-        //     console.log(res.data)
-        //   }
-        // })
+    toLive(e) {
+        wx.reLaunch({url: '/pages/live/live'})
     }
 
 

@@ -8,74 +8,57 @@
                     <image class="" src="{{item}}"/>
                 </swiper-item>
             </block>
+            <swiper-item>
+                <a href="/pages/list/detail">
+                    <image bindtap="toLive" class="" src="https://www.erkui.link/static/imgs/photo-preview.jpg"/>
+                </a>
+            </swiper-item>
         </swiper>
     </view>
 
 
     <view class="page__bd">
         <view class="weui-panel weui-panel_access">
-            <view class="weui-panel__hd">精彩视频课程</view>
+            <view class="weui-panel__hd">精彩视频课程分类</view>
 
             <view class="weui-panel__bd">
-                <block wx:for="{{courseList}}" wx:key="key">
-                    <a class="weui-media-box weui-media-box_appmsg" bindtap="toDetail" data-id="({{item.id}})">
-                        <view class="weui-media-box__hd">
-                            <image class="weui-media-box__thumb" src="{{item.thumbnail}}" alt></image>
-                        </view>
-                        <view class="weui-media-box__bd">
-                            <h4 class="weui-media-box__title">{{item.title}}</h4>
-                            <view class="weui-media-box__desc video-counter">{{item.vistorCounter}}人观看</view>
-                        </view>
-                    </a>
-                </block>
+                <a class="weui-media-box weui-media-box_appmsg" bindtap="toList" data-id="1">
+                    <view class="weui-media-box__hd">
+                        <image class="weui-media-box__thumb" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic3.zhimg.com%2Fv2-f8c02c30ac25f4611a94360c7c7b0ac8_1200x500.jpg&refer=http%3A%2F%2Fpic3.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625666964&t=0d39c43185858411a079076da639eedd" alt></image>
+                    </view>
+                    <view class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">日常vlog</h4>
+                        <view class="weui-media-box__desc video-counter">{{counter1}}人观看</view>
+                    </view>
+                </a>
+            </view>
+            <view class="weui-panel__bd">
+                <a class="weui-media-box weui-media-box_appmsg" bindtap="toList" data-id="2">
+                    <view class="weui-media-box__hd">
+                        <image class="weui-media-box__thumb" src="https://graph.baidu.com/thumb/v4/2609555760,2387821953.jpg" alt></image>
+                    </view>
+                    <view class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">成人英语</h4>
+                        <view class="weui-media-box__desc video-counter">{{counter2}}人观看</view>
+                    </view>
+                </a>
+            </view>
+            <view class="weui-panel__bd">
+                <a class="weui-media-box weui-media-box_appmsg" bindtap="toList" data-id="3">
+                    <view class="weui-media-box__hd">
+                        <image class="weui-media-box__thumb" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2530406725,655837960&fm=11&gp=0.jpg" alt></image>
+                    </view>
+                    <view class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">婴儿英语</h4>
+                        <view class="weui-media-box__desc video-counter">{{counter3}}人观看</view>
+                    </view>
+                </a>
             </view>
 
-<!--            <view class="weui-panel__ft">-->
-<!--                <a class="weui-cell weui-cell_active weui-cell_access weui-cell_link">-->
-<!--                    <view class="weui-cell__bd">查看更多</view>-->
-<!--                    <text class="weui-cell__ft"></text>-->
-<!--                </a>-->
-<!--            </view>-->
         </view>
 
 
     </view>
 
-    <view class="page__bd page__bd_spacing">
-        <a class="weui-btn weui-btn_default" bindtap="open2">样式二</a>
-    </view>
 
-    <view class="fadeIn" wx:if="{{dialog2}}">
-        <view class="weui-mask" bindtap="close"></view>
-        <view class="weui-half-screen-dialog">
-            <view class="weui-half-screen-dialog__hd">
-                <view class="weui-half-screen-dialog__hd__side" bindtap="close">
-                    <a class="weui-icon-btn">返回<i class="weui-icon-back-arrow-thin"></i></a>
-                </view>
-                <view class="weui-half-screen-dialog__hd__main">
-                    <strong class="weui-half-screen-dialog__title">输入购买的密码</strong>
-                </view>
-            </view>
-
-            <form bindsubmit="checkPwd" bindreset="formReset">
-                <view class="weui-half-screen-dialog__bd">
-                    <view class="weui-half-screen-dialog__desc">
-                        密码校验成功后可观看精彩的视频内容
-                    </view>
-                    <view class="weui-half-screen-dialog__tips">
-                        <view class="weui-cell weui-cell_active">
-                            <view class="weui-cell__bd">
-                                <input class="weui-input" name='pwd' placeholder="请输入购买的密码"
-                                       placeholder-class="weui-input__placeholder"/>
-                            </view>
-                        </view>
-
-                    </view>
-                </view>
-                <view class="weui-half-screen-dialog__ft">
-                    <button class="weui-btn weui-btn_default" formType="submit">校验密码</button>
-                </view>
-            </form>
-        </view>
-    </view>
 </view>

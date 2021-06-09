@@ -1,3 +1,5 @@
+import request from "../../utils/request";
+
 function getRandomColor() {
     const rgb = []
     for (let i = 0; i < 3; ++i) {
@@ -15,13 +17,17 @@ Page({
     },
 
     data: {
+        dialog2: false,
         src: '',
-        courseId: ""
+        detail: {}
     },
-    onLoad: function (options) {
+
+    onLoad: async function (options) {
         console.log("options=", options)
+        let ret = await request('/wechat/detail', {id: options.courseId})
+        console.log("detail=", ret)
         this.setData({
-            courseId: options.courseId
+            detail: ret.obj
         })
     },
     downloadPpt(e) {
@@ -43,5 +49,30 @@ Page({
                 })
             }
         })
-    }
+    },
+    close: function () {
+        this.setData({
+            dialog2: false
+        });
+    },
+    open2() {
+        this.setData({
+            dialog2: true
+        });
+    },
+    checkPwd:async function(e) {
+        let ret = await request('/wechat/detail', {id: options.courseId})
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('form发生了submit事件，携带数据为：', e.detail.value.pwd)
+    // wx.request({
+    //   url: 'http://127.0.0.1:8080/wechat/code',
+    //   method: 'post',
+    //   data: {
+    //     code: res.code
+    //   },
+    //   success (res) {
+    //     console.log(res.data)
+    //   }
+    // })
+}
 })

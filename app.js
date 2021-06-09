@@ -10,7 +10,7 @@ App({
         this.globalData.theme = theme;
         themeListeners.forEach((listener) => {
             listener(theme);
-        });
+        });        
     },
     watchThemeChange(listener) {
         if (themeListeners.indexOf(listener) < 0) {
