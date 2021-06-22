@@ -1,0 +1,20 @@
+/*!
+ * WeUI v2.4.4 (https://github.com/weui/weui-wxss)
+ * Copyright 2021 Tencent, Inc.
+ * Licensed under the MIT license
+ */
+ .weui-cell_example .weui-cell__hd image{width:40rpx;height:40rpx;display:block;margin-right:32rpx}
+ .head {
+  width: 750rpx;
+  margin:0 auto;
+ } 
+ .video-counter{
+   padding-top: 1em;
+ }
+ .swiper-header{
+   width: 100%;
+ }
+
+ .swiper-header image{
+  width: 100%;
+ }

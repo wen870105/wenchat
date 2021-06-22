@@ -1,0 +1,39 @@
+<view class="page" data-weui-theme="{{theme}}">
+
+    <view class="head">
+        <!--是否显示圆点，自动播放， 间隔时间， 监听滚动和点击事件-->
+        <swiper class="swiper-header" indicator-dots="true" autoplay="true" duration="1000">
+            <block wx:for="{{imgs}}" wx:key="key">
+                <swiper-item>
+                    <image class="" src="{{item}}"/>
+                </swiper-item>
+            </block>
+            <swiper-item>
+                <image class="" src="https://www.erkui.link/static/imgs/photo-preview.jpg"/>
+            </swiper-item>
+        </swiper>
+    </view>
+
+
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">精彩视频课程</view>
+
+            <view class="weui-panel__bd">
+                <block wx:for="{{courseList}}" wx:key="key">
+                    <a class="weui-media-box weui-media-box_appmsg" bindtap="toDetail" data-id="{{item.id}}">
+                        <view class="weui-media-box__hd">
+                            <image class="weui-media-box__thumb" src="{{item.thumbnail}}" alt></image>
+                        </view>
+                        <view class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">{{item.title}}</h4>
+                            <view class="weui-media-box__desc video-counter">{{item.vistorCounter}}人观看</view>
+                        </view>
+                    </a>
+                </block>
+            </view>
+
+        </view>
+    </view>
+
+</view>

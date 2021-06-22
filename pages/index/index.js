@@ -37,6 +37,9 @@ Page({
     },
     toLive(e) {
         wx.reLaunch({url: '/pages/live/live'})
+    },
+    toTop(e){
+        wx.reLaunch({url: '/pages/top/top'})
     }
 
 

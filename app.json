@@ -3,6 +3,8 @@
     "pages/index/index",
     "pages/user/user",
     "pages/list/list",
+    "pages/detail/detail",
+    "pages/top/top",
     "example/index",
     "example/button/button",
     "example/input/input",
@@ -48,8 +50,7 @@
     "example/top-tips/top-tips",
     "example/navigation-bar/navigation-bar",
     "example/tabbar/tabbar",
-    "example/searchbar/searchbar",
-    "pages/detail/detail"
+    "example/searchbar/searchbar"
   ],
   "window": {
     "navigationBarTextStyle": "black",

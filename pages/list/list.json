@@ -1,0 +1,23 @@
+{
+  "usingComponents": {},
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#22dd6e",
+    "borderStyle": "black",
+    "backgroundColor": "#F8F8F8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon-home.png",
+        "selectedIconPath": "static/icon-home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/icon-my.png",
+        "selectedIconPath": "static/icon-my-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

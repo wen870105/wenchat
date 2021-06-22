@@ -1,0 +1,40 @@
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="head">
+        <view class="page-section tc">
+
+            <video class="video" id="demoVideo" controls enable-progress-gesture="false" show-center-play-btn="true"
+                   src="http://erkui.link/static/video/3eab3472f20abb1580e4554249648fa3_1.mp4"
+            >
+            </video>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">一个普通女孩的十年</view>
+            <view class="weui-article__section">
+                <view class="weui-article__h2"></view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3"></view>
+
+                    <view class="weui-article__p">
+                        Hello 大家好， 我是筱雨，也可以叫我Sophie. 我现在是一名国际学校的老师；教过IB、ap、alevel 的数学；拥有PGCE、IB、CELTA、TEFEL 证书。 擅用不同的考试技巧帮助学生在SAT、雅思、托福拿到高分，同时也帮助些学生申请成功了藤校；也是一个三岁娃的妈。18岁去美国读本科，硕士去了香港，现在是一名在读博士，因为疫情和个人的原因从英国诺丁汉大学转至香港教育大学，与此同时，我也即将会再一次成为教育创业者
+                    </view>
+                    <view class="weui-article__p">
+                    因为工作和学习，我转场了很多地方：美国-南京-上海- 苏州-香港-马来-杭州。 朋友说我的人生就是“折腾“，但是我很庆幸这种“折腾”让我看到了更多的可能性，也有很多领悟。如果你问我，对自己的选择失望过，我会很坚定的回答：“没有，但是偶尔会困惑，可是困惑后，我还是会坚持自己的决定。”不管是从学生到老师再到妈妈，角色的转变，
+                    真的很累，但是坚持下去的理由是————我想看到自己的更多的可能性。
+                    </view>
+                    <view class="weui-article__p">
+                        当学生的时候，我会问老师，我是一个好学生吗？当妈妈的时候，我会问月嫂，我是一个好妈妈吗？当老师的时候，我会问学生，喜欢上我的课吗？每一个阶段虽然我都在取悦别人，迎合共性的价值观，但我都在重新审视自己、认识自己，找寻自己，直至现在的我，已经不需要别人靠别人答案过活；因为我是我自己这只小船的Captain.
+                    </view>
+                    <view class="weui-article__p">
+                        人生从来没有正确答案，因为它是何其的复杂，不论是学生的我、当妈的我、当老师的我, 我也都在努力的寻找一个能平衡所有角色的自己；一个未知的自己。 一直非常喜欢Louisa May Alcott一句话：I  am not afraid of storms for I am learning how to sail my ship. 未来可期，破风前行，一起加油吧！
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="http://www.erkui.link/static/imgs/testtest_20210622181634.jpg" mode="aspectFit" style="height: 360px" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

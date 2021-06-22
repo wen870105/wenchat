@@ -1,0 +1,16 @@
+.head {
+    width: 750rpx;
+    margin:0 auto;
+}
+
+video{
+    width: 750rpx;
+    padding: 5rpx;
+}
+
+.iconfont{
+    width: 100rpx;
+    height: 100rpx;
+    font-size: 36rpx;
+    color: red;
+}
